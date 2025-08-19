@@ -16,7 +16,7 @@
 
 ## 📝 项目简介
 <p>
-<img src="./output/image.png" alt="首页">
+<img src="./output/imagecopy0.png" alt="首页">
 </p>
 本项目是一个高效的藏文分词工具，采用Bi-LSTM+CRF深度学习方法，为藏文自然语言处理研究提供基础支持。工具提供命令行和图形界面两种使用方式，方便不同场景下的应用需求。
 
@@ -33,12 +33,26 @@
 ### 环境要求
 
 - Python 3.6+
+- PyTorch 1.7.0+
+- Pillow 8.0.0+
+
+### 快速启动（推荐）
+
+使用提供的启动脚本可以自动检查环境并启动程序：
+
+```bash
+# 给脚本添加执行权限（仅首次需要）
+chmod +x run_tokenizer.sh
+
+# 运行启动脚本
+./run_tokenizer.sh
+```
 
 ### 命令行模式
 
 1. **安装依赖**：
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirments.txt
    ```
 
 2. **执行分词**：
@@ -52,7 +66,7 @@
 
 1. **安装依赖**：
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirments.txt
    ```
 
 2. **启动图形界面**：
@@ -71,6 +85,8 @@
 - `NyimaTashi.py` - 命令行分词工具
 - `TibetanTokenizerGUI.py` - 图形界面分词工具
 - `model.py` - 模型定义文件
+- `run_tokenizer.sh` - 启动脚本，提供自动环境检查和程序启动
+- `requirments.txt` - 项目依赖文件
 - `model/` - 预训练模型目录
 - `fontfile/` - 字体文件目录
 - `output/` - 输出目录，包含分词结果文件和图片文件
@@ -78,3 +94,4 @@
 ## 🔗 相关链接
 
 原项目地址：[https://github.com/gyatso736/Tibetan-tokenizer-](https://github.com/gyatso736/Tibetan-tokenizer-)
+

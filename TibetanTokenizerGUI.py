@@ -407,8 +407,8 @@ class TibetanTokenizerGUI:
         self.content_frame = ttk.Frame(self.main_frame)
         self.content_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         
-        # 调整按钮区域占比为20%
-        self.button_frame = ttk.Frame(self.main_frame, width=int(self.root.winfo_screenwidth() * 0.20))
+        # 调整按钮区域为固定宽度，更合理的尺寸
+        self.button_frame = ttk.Frame(self.main_frame, width=180)
         self.button_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=10)
         self.button_frame.pack_propagate(False)  # 防止按钮框架被内容压缩
         
@@ -432,17 +432,19 @@ class TibetanTokenizerGUI:
             self.mode_frame, 
             text=f"{self.icons['text_mode']} 文本处理", 
             command=self.show_text_mode,
-            style="TextMode.TButton"
+            style="TextMode.TButton",
+            width=12  # 设置合适的宽度
         )
-        self.text_mode_button.pack(fill=tk.X, pady=5)
+        self.text_mode_button.pack(pady=5, padx=2)
         
         self.file_mode_button = ttk.Button(
             self.mode_frame, 
             text=f"{self.icons['file_mode']} 文件处理", 
             command=self.show_file_mode,
-            style="FileMode.TButton"
+            style="FileMode.TButton",
+            width=12  # 设置合适的宽度
         )
-        self.file_mode_button.pack(fill=tk.X, pady=5)
+        self.file_mode_button.pack(pady=5, padx=2)
         
         # 创建操作按钮区域
         self.operation_frame = ttk.LabelFrame(self.button_frame, text="操作", padding="10")
@@ -455,35 +457,39 @@ class TibetanTokenizerGUI:
             self.text_operation_frame, 
             text=f"{self.icons['process']} 分词处理", 
             command=self.process_text,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.process_text_button.pack(fill=tk.X, pady=5)
+        self.process_text_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         self.clear_text_button = ttk.Button(
             self.text_operation_frame, 
             text=f"{self.icons['clear']} 清空文本", 
             command=self.clear_text,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.clear_text_button.pack(fill=tk.X, pady=5)
+        self.clear_text_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         # 添加复制结果按钮
         self.copy_result_button = ttk.Button(
             self.text_operation_frame, 
             text=f"{self.icons['copy']} 复制结果", 
             command=self.copy_result,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.copy_result_button.pack(fill=tk.X, pady=5)
+        self.copy_result_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         # 添加退出按钮到操作区域
         self.exit_button_text = ttk.Button(
             self.text_operation_frame, 
             text=f"{self.icons['exit']} 退出程序", 
             command=self.exit_program,
-            style="Exit.TButton"
+            style="Exit.TButton",
+            width=12
         )
-        self.exit_button_text.pack(fill=tk.X, pady=5)
+        self.exit_button_text.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         # 文件模式按钮 (初始隐藏)
         self.file_operation_frame = ttk.Frame(self.operation_frame)
@@ -492,34 +498,38 @@ class TibetanTokenizerGUI:
             self.file_operation_frame, 
             text=f"{self.icons['process']} 分词处理", 
             command=self.process_file,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.process_file_button.pack(fill=tk.X, pady=5)
+        self.process_file_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         self.save_file_button = ttk.Button(
             self.file_operation_frame, 
             text=f"{self.icons['save']} 保存结果", 
             command=self.save_result_file,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.save_file_button.pack(fill=tk.X, pady=5)
+        self.save_file_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         self.clear_file_button = ttk.Button(
             self.file_operation_frame, 
             text=f"{self.icons['clear']} 清空内容", 
             command=self.clear_file_fields,
-            style="TButton"
+            style="TButton",
+            width=12
         )
-        self.clear_file_button.pack(fill=tk.X, pady=5)
+        self.clear_file_button.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         # 添加退出按钮到文件操作区域
         self.exit_button_file = ttk.Button(
             self.file_operation_frame, 
             text=f"{self.icons['exit']} 退出程序", 
             command=self.exit_program,
-            style="Exit.TButton"
+            style="Exit.TButton",
+            width=12
         )
-        self.exit_button_file.pack(fill=tk.X, pady=5)
+        self.exit_button_file.pack(pady=5, padx=2, anchor=tk.CENTER)
         
         # 创建文本处理区域
         self.text_content_frame = ttk.Frame(self.content_frame)
@@ -588,11 +598,11 @@ class TibetanTokenizerGUI:
         # 添加浏览按钮到文件选择区域
         ttk.Button(
             file_input_frame, 
-            text=f"{self.icons['browse']} 浏览...", 
+            text=f"{self.icons['browse']} 浏览", 
             command=self.browse_input_file,
             style="TButton",
-            width=10
-        ).pack(side=tk.RIGHT)
+            width=8
+        ).pack(side=tk.RIGHT, padx=2)
         
         # 结果显示区域
         result_frame = ttk.LabelFrame(self.file_content_frame, text="处理结果预览", padding="15")
