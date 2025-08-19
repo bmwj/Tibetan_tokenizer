@@ -3,13 +3,21 @@
   བོད་ཡིག་གི་ཚིག་མིང་དུ་དབྱེ་བྱེད། | Tibetan Tokenizer | 藏文分词器
   <br>
 </h1>
-
+<p align="center">
+  <img src="https://img.shields.io/badge/语言-Python-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/框架-PyTorch-red.svg" alt="PyTorch">
+  <img src="https://img.shields.io/badge/界面-Tkinter-green.svg" alt="Tkinter">
+  <img src="https://img.shields.io/badge/许可证-MIT-yellow.svg" alt="MIT">
+  <img src="https://img.shields.io/badge/版本-1.0.0-brightgreen.svg" alt="版本">
+</p>
 <p align="center">
   <b>基于Bi-LSTM+CRF方法的藏文分词工具</b>
 </p>
 
 ## 📝 项目简介
-
+<p>
+<img src="./output/image.png" alt="首页">
+</p>
 本项目是一个高效的藏文分词工具，采用Bi-LSTM+CRF深度学习方法，为藏文自然语言处理研究提供基础支持。工具提供命令行和图形界面两种使用方式，方便不同场景下的应用需求。
 
 ## ✨ 功能特点
@@ -25,7 +33,6 @@
 ### 环境要求
 
 - Python 3.6+
-- 相关依赖包
 
 ### 命令行模式
 
@@ -66,6 +73,7 @@
 - `model.py` - 模型定义文件
 - `model/` - 预训练模型目录
 - `fontfile/` - 字体文件目录
+- `output/` - 输出目录，包含分词结果文件和图片文件
 
 ## 🔗 相关链接
 
