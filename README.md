@@ -28,6 +28,7 @@
 - 🌐 **多语言支持**：界面支持藏文、英文和中文
 - 👨‍💻 **用户友好**：直观的图形界面，操作简单
 
+
 ## 🚀 使用方法
 
 ### 环境要求
@@ -35,11 +36,36 @@
 - Python 3.6+
 - PyTorch 1.7.0+
 - Pillow 8.0.0+
+### 创建环境
+```bash
+# 创建新的conda环境
+conda create -n tibetan_env python=3.8
 
-### 快速启动（推荐）
+# 激活环境
+conda activate tibetan_env
+
+# 验证环境
+conda info --envs
+```
+### 启动模式
+
+1. **安装依赖**：
+```bash
+# 确保虚拟环境已激活（提示符前有环境名）
+# 升级pip到最新版本
+pip install --upgrade pip
+
+# 安装项目依赖
+pip install -r requirments.txt
+
+# 或者手动安装主要依赖
+pip install torch >=1.7.0 pillow >=8.0.0
+
+```
+
+2. **快速启动（推荐）**：
 
 使用提供的启动脚本可以自动检查环境并启动程序：
-
 ```bash
 # 给脚本添加执行权限（仅首次需要）
 chmod +x run_tokenizer.sh
@@ -48,33 +74,22 @@ chmod +x run_tokenizer.sh
 ./run_tokenizer.sh
 ```
 
-### 命令行模式
-
-1. **安装依赖**：
-   ```bash
-   pip install -r requirments.txt
-   ```
-
-2. **执行分词**：
-   ```bash
+2. **命令行模式**：
+```bash
    python NyimaTashi.py <input_file> <output_file>
-   ```
+```
    - `<input_file>`: 需要分词的文件路径
    - `<output_file>`: 结果输出文件路径
 
 ### 图形界面模式
 
-1. **安装依赖**：
-   ```bash
-   pip install -r requirments.txt
-   ```
+1. **启动图形界面**：
 
-2. **启动图形界面**：
-   ```bash
-   python TibetanTokenizerGUI.py
-   ```
+```bash
+./run_tokenizer.sh
+```
 
-3. **使用方法**：
+2. **使用方法**：
    - **文本处理**：在左侧输入框中输入藏文文本，点击"分词处理"按钮
    - **文件处理**：切换到文件处理模式，选择文件，点击"分词处理"按钮
    - **保存结果**：点击"保存结果"按钮将分词结果保存到文件
@@ -91,7 +106,11 @@ chmod +x run_tokenizer.sh
 - `fontfile/` - 字体文件目录
 - `output/` - 输出目录，包含分词结果文件和图片文件
 
-## 🔗 相关链接
+## 🔗 原项目链接
 
-原项目地址：[https://github.com/gyatso736/Tibetan-tokenizer-](https://github.com/gyatso736/Tibetan-tokenizer-)
+✍️作者：[https://github.com/gyatso736](Gyatso736)
 
+📚链接：[https://github.com/gyatso736/Tibetan-tokenizer-](https://github.com/gyatso736/Tibetan-tokenizer-)
+
+---
+受限于语料库规模，可能偶现生词分词错误的情况。期待与您共同探讨优化方案，欢迎通过邮箱 jibudu@163.com 交流指正。
